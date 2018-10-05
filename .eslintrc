@@ -1,0 +1,52 @@
+{
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "codeFrame": false,
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true,
+            "experimentalObjectRestSpread": true
+        }
+    },
+    "env": {
+        "node": true,
+        "jest/globals": true
+    },
+    "globals": {
+        "Promise": true,
+        "Symbol": true
+    },
+    "plugins": ["react", "jest"],
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:jest/recommended",
+        "prettier"
+    ],
+    "settings": {
+        "react": {
+            "version": "16.0",
+        }
+    },
+    "rules": {
+        "no-console": 1,
+        "no-debugger":1,
+        "react/display-name": 0,
+        "react/jsx-no-duplicate-props": 2,
+        "react/jsx-no-undef": 2,
+        "react/jsx-uses-react": 2,
+        "react/jsx-uses-vars": 2,
+        "react/no-danger": 2,
+        "react/no-deprecated": 1,
+        "react/no-did-mount-set-state": 1,
+        "react/no-did-update-set-state": 1,
+        "react/no-direct-mutation-state": 2,
+        "react/no-is-mounted": 1,
+        "react/no-unknown-property": 1,
+        "react/prop-types": 1,
+        "react/react-in-jsx-scope": 2,
+        // require the use of === and !==
+        "eqeqeq": "warn",
+    }
+}
