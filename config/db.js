@@ -1,14 +1,40 @@
+let id = 1
+
+function getId() {
+    return id++
+}
+
 module.exports = {
-    posts: [
-        { id: 1, title: "Lorem Ipsum", views: 254, user_id: 123 },
-        { id: 2, title: "Sic Dolor amet", views: 65, user_id: 456 },
+    bookmarks: [
+        {
+            id: getId(),
+            title: '🎼webpack 4: released today!!✨',
+            url: 'https://medium.com/webpack/webpack-4-released-today-6cdb994702d4',
+            isRead: false,
+        },
+        {
+            id: getId(),
+            title: 'mg979/vim-visual-multi: Multiple cursors project for vim/neovim (wip)',
+            url: 'https://github.com/mg979/vim-visual-multi',
+            isRead: false,
+        },
+        {
+            id: getId(),
+            title: 'Check out new Neovim UI build with JavaScript - Veonim',
+            url: 'https://github.com/veonim/veonim',
+            isRead: false,
+        },
+        {
+            id: getId(),
+            title: 'How To GraphQL - Mutations',
+            url: 'https://www.howtographql.com/react-apollo/3-mutations-creating-links/',
+            isRead: true,
+        },
+        {
+            id: getId(),
+            title: '🍾🚀 webpack 3: Official Release!! 🚀🍾',
+            url: 'https://medium.com/webpack/webpack-3-official-release-15fd2dd8f07b',
+            isRead: true,
+        },
     ],
-    users: [
-        { id: 123, name: "John Doe" },
-        { id: 456, name: "Jane Doe" }
-    ],
-    comments: [
-        { id: 987, post_id: 1, body: "Consectetur adipiscing elit", date: new Date('2017-07-03') },
-        { id: 995, post_id: 1, body: "Nam molestie pellentesque dui", date: new Date('2017-08-17') }
-    ]
 }
