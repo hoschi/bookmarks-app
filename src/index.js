@@ -6,7 +6,7 @@ import CssBaseline from '@material-ui/core/CssBaseline'
 import App from './App'
 
 const client = new ApolloClient({
-    uri: 'http://localhost:3009/graphql',
+    uri: '/graphql',
 })
 const rootElement = global.document.querySelector('#root')
 if (rootElement) {

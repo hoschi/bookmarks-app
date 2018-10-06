@@ -36,6 +36,7 @@
     "lint:js:fix": "eslint --fix .",
     "format-and-fix": "npm run lint:js:fix && npm run format"
   },
+  "proxy": "http://localhost:3009",
   "browserslist": [
     ">0.2%",
     "not dead",
