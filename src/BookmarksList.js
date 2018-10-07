@@ -22,20 +22,20 @@ const styles = R.always({
     },
 })
 
+const bookmarksQuery = gql`
+    {
+        allBookmarks(sortField: "isRead", sortOrder: "ASC") {
+            id
+            title
+            url
+            isRead
+        }
+    }
+`
+
 function BookmarksList({ classes }) {
     return (
-        <Query
-            query={gql`
-                {
-                    allBookmarks(sortField: "isRead", sortOrder: "ASC") {
-                        id
-                        title
-                        url
-                        isRead
-                    }
-                }
-            `}
-        >
+        <Query query={bookmarksQuery}>
             {({ loading, error, data }) => {
                 if (loading) return <p>Loading...</p>
                 if (error) return <p>Error {error.toString()}</p>
