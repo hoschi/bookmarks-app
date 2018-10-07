@@ -20,15 +20,15 @@ module.exports = {
         },
         {
             id: getId(),
-            title: 'Check out new Neovim UI build with JavaScript - Veonim',
-            url: 'https://github.com/veonim/veonim',
-            isRead: false,
-        },
-        {
-            id: getId(),
             title: 'How To GraphQL - Mutations',
             url: 'https://www.howtographql.com/react-apollo/3-mutations-creating-links/',
             isRead: true,
+        },
+        {
+            id: getId(),
+            title: 'Check out new Neovim UI build with JavaScript - Veonim',
+            url: 'https://github.com/veonim/veonim',
+            isRead: false,
         },
         {
             id: getId(),

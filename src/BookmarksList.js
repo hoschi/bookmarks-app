@@ -27,7 +27,7 @@ function BookmarksList({ classes }) {
         <Query
             query={gql`
                 {
-                    allBookmarks {
+                    allBookmarks(sortField: "isRead", sortOrder: "ASC") {
                         id
                         title
                         url
