@@ -8,8 +8,9 @@ import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
 import Divider from '@material-ui/core/Divider'
+import Checkbox from '@material-ui/core/Checkbox'
 import Paper from '@material-ui/core/Paper'
-import { Query } from 'react-apollo'
+import { Query, Mutation } from 'react-apollo'
 import gql from 'graphql-tag'
 
 const styles = R.always({
@@ -22,7 +23,7 @@ const styles = R.always({
     },
 })
 
-const bookmarksQuery = gql`
+const queryAllBookmarks = gql`
     {
         allBookmarks(sortField: "isRead", sortOrder: "ASC") {
             id
@@ -33,39 +34,79 @@ const bookmarksQuery = gql`
     }
 `
 
+const changeBookmarkReadFlag = gql`
+    mutation ChangeReadFlag($id: ID!, $isRead: Boolean!) {
+        updateBookmark(id: $id, isRead: $isRead) {
+            id
+            title
+            isRead
+        }
+    }
+`
+
 function BookmarksList({ classes }) {
     return (
-        <Query query={bookmarksQuery}>
-            {({ loading, error, data }) => {
-                if (loading) return <p>Loading...</p>
-                if (error) return <p>Error {error.toString()}</p>
-                const { allBookmarks } = data
-
+        <Mutation
+            mutation={changeBookmarkReadFlag}
+            ignoreResults
+            refetchQueries={[{ query: queryAllBookmarks }]}
+        >
+            {(updateBookmark) => {
                 return (
-                    <Paper>
-                        <Typography component="div">
-                            <List disablePadding>
-                                {allBookmarks.map(({ id, title, url, isRead }, i) => (
-                                    <Fragment key={id}>
-                                        <ListItem component="a" href={url} className={classes.link}>
-                                            <ListItemText
-                                                primary={title}
-                                                classes={{
-                                                    primary: classNames({
-                                                        [classes.linkRead]: isRead,
-                                                    }),
-                                                }}
-                                            />
-                                        </ListItem>
-                                        {i !== allBookmarks.length - 1 && <Divider />}
-                                    </Fragment>
-                                ))}
-                            </List>
-                        </Typography>
-                    </Paper>
+                    <Query query={queryAllBookmarks}>
+                        {({ loading, error, data }) => {
+                            if (loading) return <p>Loading...</p>
+                            if (error) return <p>Query Error {error.toString()}</p>
+                            const { allBookmarks } = data
+
+                            return (
+                                <Paper>
+                                    <Typography component="div">
+                                        <List disablePadding>
+                                            {allBookmarks.map(({ id, title, url, isRead }, i) => (
+                                                <Fragment key={id}>
+                                                    <ListItem
+                                                        component="a"
+                                                        href={url}
+                                                        className={classes.link}
+                                                    >
+                                                        <Checkbox
+                                                            checked={isRead}
+                                                            aria-label={
+                                                                isRead ? 'Mark unread' : 'Mark read'
+                                                            }
+                                                            tabIndex={-1}
+                                                            onChange={() => {
+                                                                updateBookmark({
+                                                                    variables: {
+                                                                        id: id.toString(),
+                                                                        isRead: !isRead,
+                                                                    },
+                                                                })
+                                                            }}
+                                                            disableRipple
+                                                        />
+                                                        <ListItemText
+                                                            primary={title}
+                                                            classes={{
+                                                                primary: classNames({
+                                                                    [classes.linkRead]: isRead,
+                                                                }),
+                                                            }}
+                                                        />
+                                                    </ListItem>
+                                                    {i !== allBookmarks.length - 1 && <Divider />}
+                                                </Fragment>
+                                            ))}
+                                        </List>
+                                    </Typography>
+                                </Paper>
+                            )
+                        }}
+                    </Query>
                 )
             }}
-        </Query>
+        </Mutation>
     )
 }
 
