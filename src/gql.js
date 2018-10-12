@@ -15,7 +15,6 @@ export const changeBookmarkReadFlag = gql`
     mutation ChangeReadFlag($id: ID!, $isRead: Boolean!) {
         updateBookmark(id: $id, isRead: $isRead) {
             id
-            title
             isRead
         }
     }
