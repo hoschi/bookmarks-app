@@ -11,7 +11,7 @@ import Divider from '@material-ui/core/Divider'
 import Checkbox from '@material-ui/core/Checkbox'
 import Paper from '@material-ui/core/Paper'
 import { Query, Mutation } from 'react-apollo'
-import gql from 'graphql-tag'
+import { changeBookmarkReadFlag, queryAllBookmarks } from './gql'
 
 const styles = R.always({
     link: {
@@ -22,27 +22,6 @@ const styles = R.always({
         color: '#00000080',
     },
 })
-
-const queryAllBookmarks = gql`
-    {
-        allBookmarks(sortField: "isRead", sortOrder: "ASC") {
-            id
-            title
-            url
-            isRead
-        }
-    }
-`
-
-const changeBookmarkReadFlag = gql`
-    mutation ChangeReadFlag($id: ID!, $isRead: Boolean!) {
-        updateBookmark(id: $id, isRead: $isRead) {
-            id
-            title
-            isRead
-        }
-    }
-`
 
 function BookmarksList({ classes }) {
     return (
