@@ -13,18 +13,21 @@ const styles = R.always({
     heading: {
         textAlign: 'center',
     },
+    content: {
+        maxWidth: 1280,
+    },
 })
 
 function App({ classes }) {
     return (
         <div className={classes.root}>
-            <Grid container spacing={16}>
+            <Grid container spacing={16} justify="center">
                 <Grid item xs={12}>
                     <Typography component="h1" variant="display3" className={classes.heading}>
                         Bookmarks
                     </Typography>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid item xs={12} className={classes.content}>
                     <BookmarksList />
                 </Grid>
             </Grid>
