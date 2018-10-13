@@ -5,6 +5,7 @@ import { withStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
 import BookmarksList from './BookmarksList'
+import BookmarkAdd from './BookmarkAdd'
 
 const styles = R.always({
     root: {
@@ -28,6 +29,7 @@ function App({ classes }) {
                     </Typography>
                 </Grid>
                 <Grid item xs={12} className={classes.content}>
+                    <BookmarkAdd />
                     <BookmarksList />
                 </Grid>
             </Grid>
