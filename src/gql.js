@@ -31,3 +31,9 @@ export const changeBookmarkReadFlag = gql`
         }
     }
 `
+
+export const removeBookmark = gql`
+    mutation RemoveBookmark($id: ID!) {
+        removeBookmark(id: $id)
+    }
+`
