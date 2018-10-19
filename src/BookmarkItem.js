@@ -13,12 +13,20 @@ import { Mutation } from 'react-apollo'
 import { changeBookmarkReadFlag, removeBookmark, queryAllBookmarks } from './gql'
 
 const styles = R.always({
-    link: {
+    root: {
         color: 'inherit',
         textDecoration: 'none',
     },
+    listItemContainer: {
+        '&:hover $remove': {
+            opacity: 1,
+        },
+    },
     linkRead: {
         color: '#00000080',
+    },
+    remove: {
+        opacity: 0,
     },
 })
 
@@ -38,7 +46,12 @@ function BookmarkItem({ classes, id, title, url, isRead }) {
                     >
                         {(removeBookmark) => {
                             return (
-                                <ListItem component="a" href={url} className={classes.link}>
+                                <ListItem
+                                    component="a"
+                                    href={url}
+                                    className={classes.root}
+                                    classes={{ container: classes.listItemContainer }}
+                                >
                                     <Checkbox
                                         disableRipple
                                         checked={isRead}
@@ -69,7 +82,7 @@ function BookmarkItem({ classes, id, title, url, isRead }) {
                                             }),
                                         }}
                                     />
-                                    <ListItemSecondaryAction>
+                                    <ListItemSecondaryAction className={classes.remove}>
                                         <IconButton
                                             aria-label="remove item"
                                             onClick={() => {
