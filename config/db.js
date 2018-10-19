@@ -1,7 +1,10 @@
-let id = 1
+const addHours = require('date-fns/add_hours')
+let currentDate = new Date('2017-01-02T12:00:00')
 
 function getId() {
-    return id++
+    const r = currentDate
+    currentDate = addHours(currentDate, 1)
+    return r.getTime()
 }
 
 module.exports = {

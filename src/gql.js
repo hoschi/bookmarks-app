@@ -1,8 +1,8 @@
 import { gql } from 'graphql.macro'
 
-// NOTICE: backend would assign the id, but fake server doesn't support this
-let bookmarkId = 100
-export const getNewBookmarkId = () => (bookmarkId++).toString()
+// NOTICE: backend would assign the id, but fake server doesn't support this.
+// We use "time" as ID to "make sure" we get not colliding IDs.
+export const getNewBookmarkId = () => new Date().getTime().toString()
 
 export const queryAllBookmarks = gql`
     {
