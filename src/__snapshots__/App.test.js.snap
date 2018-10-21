@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render 1`] = `
+<div
+  className="App-root-1"
+>
+  <WithStyles(Grid)
+    container={true}
+    justify="center"
+    spacing={16}
+  >
+    <WithStyles(Grid)
+      item={true}
+      xs={12}
+    >
+      <WithStyles(Typography)
+        className="App-heading-2"
+        component="h1"
+        variant="display3"
+      >
+        Bookmarks
+      </WithStyles(Typography)>
+    </WithStyles(Grid)>
+    <WithStyles(Grid)
+      className="App-content-3"
+      item={true}
+      xs={12}
+    >
+      <BookmarkAdd />
+      <BookmarksList />
+    </WithStyles(Grid)>
+  </WithStyles(Grid)>
+</div>
+`;

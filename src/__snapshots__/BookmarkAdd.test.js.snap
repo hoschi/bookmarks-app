@@ -1,0 +1,320 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` 1`] = `
+<Formik
+  createBookmark={[MockFunction]}
+  enableReinitialize={false}
+  handleSubmit={[Function]}
+  initialValues={Object {}}
+  isInitialValid={false}
+  onSubmit={[Function]}
+  render={[Function]}
+  validate={[Function]}
+  validateOnBlur={true}
+  validateOnChange={true}
+/>
+`;
+
+exports[`render 1`] = `
+<Mutation
+  ignoreResults={true}
+  mutation={
+    Object {
+      "definitions": Array [
+        Object {
+          "directives": Array [],
+          "kind": "OperationDefinition",
+          "name": Object {
+            "kind": "Name",
+            "value": "CreateBookmark",
+          },
+          "operation": "mutation",
+          "selectionSet": Object {
+            "kind": "SelectionSet",
+            "selections": Array [
+              Object {
+                "arguments": Array [
+                  Object {
+                    "kind": "Argument",
+                    "name": Object {
+                      "kind": "Name",
+                      "value": "id",
+                    },
+                    "value": Object {
+                      "kind": "Variable",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "id",
+                      },
+                    },
+                  },
+                  Object {
+                    "kind": "Argument",
+                    "name": Object {
+                      "kind": "Name",
+                      "value": "isRead",
+                    },
+                    "value": Object {
+                      "kind": "BooleanValue",
+                      "value": false,
+                    },
+                  },
+                  Object {
+                    "kind": "Argument",
+                    "name": Object {
+                      "kind": "Name",
+                      "value": "title",
+                    },
+                    "value": Object {
+                      "kind": "Variable",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "title",
+                      },
+                    },
+                  },
+                  Object {
+                    "kind": "Argument",
+                    "name": Object {
+                      "kind": "Name",
+                      "value": "url",
+                    },
+                    "value": Object {
+                      "kind": "Variable",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "url",
+                      },
+                    },
+                  },
+                ],
+                "directives": Array [],
+                "kind": "Field",
+                "name": Object {
+                  "kind": "Name",
+                  "value": "createBookmark",
+                },
+                "selectionSet": Object {
+                  "kind": "SelectionSet",
+                  "selections": Array [
+                    Object {
+                      "arguments": Array [],
+                      "directives": Array [],
+                      "kind": "Field",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "id",
+                      },
+                    },
+                  ],
+                },
+              },
+            ],
+          },
+          "variableDefinitions": Array [
+            Object {
+              "kind": "VariableDefinition",
+              "type": Object {
+                "kind": "NonNullType",
+                "type": Object {
+                  "kind": "NamedType",
+                  "name": Object {
+                    "kind": "Name",
+                    "value": "ID",
+                  },
+                },
+              },
+              "variable": Object {
+                "kind": "Variable",
+                "name": Object {
+                  "kind": "Name",
+                  "value": "id",
+                },
+              },
+            },
+            Object {
+              "kind": "VariableDefinition",
+              "type": Object {
+                "kind": "NonNullType",
+                "type": Object {
+                  "kind": "NamedType",
+                  "name": Object {
+                    "kind": "Name",
+                    "value": "String",
+                  },
+                },
+              },
+              "variable": Object {
+                "kind": "Variable",
+                "name": Object {
+                  "kind": "Name",
+                  "value": "title",
+                },
+              },
+            },
+            Object {
+              "kind": "VariableDefinition",
+              "type": Object {
+                "kind": "NonNullType",
+                "type": Object {
+                  "kind": "NamedType",
+                  "name": Object {
+                    "kind": "Name",
+                    "value": "String",
+                  },
+                },
+              },
+              "variable": Object {
+                "kind": "Variable",
+                "name": Object {
+                  "kind": "Name",
+                  "value": "url",
+                },
+              },
+            },
+          ],
+        },
+      ],
+      "kind": "Document",
+      "loc": Object {
+        "end": 179,
+        "source": Object {
+          "body": "
+    mutation CreateBookmark($id: ID!, $title: String!, $url: String!) {
+        createBookmark(id: $id, isRead: false, title: $title, url: $url) {
+            id
+        }
+    }
+",
+          "locationOffset": Object {
+            "column": 1,
+            "line": 1,
+          },
+          "name": "GraphQL request",
+        },
+        "start": 0,
+      },
+    }
+  }
+  refetchQueries={
+    Array [
+      Object {
+        "query": Object {
+          "definitions": Array [
+            Object {
+              "directives": Array [],
+              "kind": "OperationDefinition",
+              "operation": "query",
+              "selectionSet": Object {
+                "kind": "SelectionSet",
+                "selections": Array [
+                  Object {
+                    "arguments": Array [
+                      Object {
+                        "kind": "Argument",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "sortField",
+                        },
+                        "value": Object {
+                          "block": false,
+                          "kind": "StringValue",
+                          "value": "isRead",
+                        },
+                      },
+                      Object {
+                        "kind": "Argument",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "sortOrder",
+                        },
+                        "value": Object {
+                          "block": false,
+                          "kind": "StringValue",
+                          "value": "ASC",
+                        },
+                      },
+                    ],
+                    "directives": Array [],
+                    "kind": "Field",
+                    "name": Object {
+                      "kind": "Name",
+                      "value": "allBookmarks",
+                    },
+                    "selectionSet": Object {
+                      "kind": "SelectionSet",
+                      "selections": Array [
+                        Object {
+                          "arguments": Array [],
+                          "directives": Array [],
+                          "kind": "Field",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "id",
+                          },
+                        },
+                        Object {
+                          "arguments": Array [],
+                          "directives": Array [],
+                          "kind": "Field",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "title",
+                          },
+                        },
+                        Object {
+                          "arguments": Array [],
+                          "directives": Array [],
+                          "kind": "Field",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "url",
+                          },
+                        },
+                        Object {
+                          "arguments": Array [],
+                          "directives": Array [],
+                          "kind": "Field",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "isRead",
+                          },
+                        },
+                      ],
+                    },
+                  },
+                ],
+              },
+              "variableDefinitions": Array [],
+            },
+          ],
+          "kind": "Document",
+          "loc": Object {
+            "end": 153,
+            "source": Object {
+              "body": "
+    {
+        allBookmarks(sortField: \\"isRead\\", sortOrder: \\"ASC\\") {
+            id
+            title
+            url
+            isRead
+        }
+    }
+",
+              "locationOffset": Object {
+                "column": 1,
+                "line": 1,
+              },
+              "name": "GraphQL request",
+            },
+            "start": 0,
+          },
+        },
+      },
+    ]
+  }
+>
+  <Component />
+</Mutation>
+`;

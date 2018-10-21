@@ -11,6 +11,7 @@
     "prop-types": "15.6.2",
     "ramda": "0.25.0",
     "react": "16.5.2",
+    "react-adopt": "0.6.0",
     "react-apollo": "2.2.4",
     "react-dom": "16.5.2",
     "recompose": "0.30.0"
@@ -22,6 +23,9 @@
     "@types/recompose": "0.27.0",
     "babel-eslint": "9.0.0",
     "date-fns": "1.29.0",
+    "enzyme": "3.7.0",
+    "enzyme-adapter-react-16": "1.6.0",
+    "enzyme-to-json": "3.3.4",
     "eslint": "5.6.0",
     "eslint-config-prettier": "3.1.0",
     "eslint-plugin-jest": "21.24.1",
@@ -29,13 +33,16 @@
     "graphql.macro": "1.0.2",
     "json-graphql-server": "2.1.2",
     "prettier": "1.14.3",
-    "react-scripts": "2.0.4"
+    "react-scripts": "2.0.4",
+    "react-test-renderer": "16.5.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "start:server": "clear; json-graphql-server config/db.js --p 3009",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
+    "test:coverage": "npm test -- --coverage",
+    "check:prepush": "npm run format-and-fix && npm run test:coverage && git status",
     "eject": "react-scripts eject",
     "format": "prettier --write 'src/**/*.{js,jsx,json,scss,css,html}'",
     "lint:js:check": "eslint .",
@@ -48,5 +55,24 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "jest": {
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    },
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,mjs}",
+      "!**/.*",
+      "!src/index.js",
+      "!src/createServiceWorker.js"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
+  }
 }

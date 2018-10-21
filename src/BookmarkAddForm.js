@@ -77,7 +77,9 @@ BookmarkAddForm.propTypes = {
     classes: PropTypes.object.isRequired,
 }
 
-function validate(values) {
+export const BookmarkAddFormStyled = withStyles(styles)(BookmarkAddForm)
+
+export function validate(values) {
     let errors = {}
     if (!values.title) {
         errors.title = 'Required'
@@ -88,10 +90,10 @@ function validate(values) {
     return errors
 }
 
-function handleSubmit(values, { setSubmitting, resetForm, setErrors, props }) {
+export function handleSubmit(values, { setSubmitting, resetForm, setErrors, props }) {
     setSubmitting(true)
     const { createBookmark } = props
-    createBookmark({
+    return createBookmark({
         variables: {
             ...values,
             id: getNewBookmarkId(),
@@ -99,18 +101,16 @@ function handleSubmit(values, { setSubmitting, resetForm, setErrors, props }) {
     })
         .then(() => {
             resetForm()
+            setSubmitting(false)
         })
         .catch((err) => {
             const valuesKeys = R.keys(values)
-            setErrors(R.zipObj(valuesKeys, R.times(R.always(err.message), valuesKeys)))
-        })
-        .finally(() => {
+            setErrors(R.zipObj(valuesKeys, R.times(R.always(err.message), valuesKeys.length)))
             setSubmitting(false)
         })
 }
 
 export default R.pipe(
-    withStyles(styles),
     withFormik({
         validate,
         handleSubmit,
@@ -118,4 +118,4 @@ export default R.pipe(
     setPropTypes({
         createBookmark: PropTypes.func.isRequired,
     })
-)(BookmarkAddForm)
+)(BookmarkAddFormStyled)

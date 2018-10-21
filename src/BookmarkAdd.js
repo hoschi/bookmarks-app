@@ -1,6 +1,6 @@
 import React from 'react'
 import { Mutation } from 'react-apollo'
-import BookmarAddForm from './BookmarAddForm'
+import BookmarkAddForm from './BookmarkAddForm'
 import { createBookmark, queryAllBookmarks } from './gql'
 
 function BookmarkAdd() {
@@ -11,7 +11,7 @@ function BookmarkAdd() {
             refetchQueries={[{ query: queryAllBookmarks }]}
         >
             {(createBookmark) => {
-                return <BookmarAddForm createBookmark={createBookmark} />
+                return <BookmarkAddForm createBookmark={createBookmark} />
             }}
         </Mutation>
     )
