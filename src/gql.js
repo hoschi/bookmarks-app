@@ -4,6 +4,9 @@ import { gql } from 'graphql.macro'
 // We use "time" as ID to "make sure" we get not colliding IDs.
 export const getNewBookmarkId = () => new Date().getTime().toString()
 
+// NOTICE: items should be sorted by two levels: isRead, dateCreated.
+// Because this is not possible with fake server, dateCreated was left out
+// entirely.
 export const queryAllBookmarks = gql`
     query AllBookmarks {
         allBookmarks(sortField: "isRead", sortOrder: "ASC") {
