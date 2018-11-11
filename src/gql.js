@@ -5,7 +5,7 @@ import { gql } from 'graphql.macro'
 export const getNewBookmarkId = () => new Date().getTime().toString()
 
 export const queryAllBookmarks = gql`
-    {
+    query AllBookmarks {
         allBookmarks(sortField: "isRead", sortOrder: "ASC") {
             id
             title
