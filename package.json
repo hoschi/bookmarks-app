@@ -33,7 +33,7 @@
     "graphql.macro": "1.0.2",
     "json-graphql-server": "2.1.2",
     "prettier": "1.14.3",
-    "react-scripts": "2.0.4",
+    "react-scripts": "5.0.1",
     "react-test-renderer": "16.5.2"
   },
   "scripts": {
