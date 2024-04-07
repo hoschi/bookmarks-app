@@ -1,28 +1,4 @@
 {
-    "parser": "babel-eslint",
-    "parserOptions": {
-        "codeFrame": false,
-        "ecmaVersion": 6,
-        "sourceType": "module",
-        "ecmaFeatures": {
-            "jsx": true,
-            "experimentalObjectRestSpread": true
-        }
-    },
-    "env": {
-        "shared-node-browser": true
-    },
-    "globals": {
-        "Promise": true,
-        "Symbol": true
-    },
-    "plugins": [
-        "react",
-    ],
-    "extends": [
-        "eslint:recommended",
-        "plugin:react/recommended",
-    ],
     "rules": {
         "no-console": "off",
         "react/no-children-prop": 0,
@@ -38,8 +14,9 @@
         "react/no-direct-mutation-state": 2,
         "react/no-is-mounted": 1,
         "react/no-unknown-property": 1,
-        "react/prop-types": 1,
         "react/react-in-jsx-scope": 2,
         "eqeqeq": "warn", // require the use of === and !==
+        "prettier/prettier": 0,
+        "spaced-comment": 0,
     }
 }
