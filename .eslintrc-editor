@@ -1,20 +1,5 @@
 {
     "rules": {
         "no-console": "off",
-        "react/no-children-prop": 0,
-        "react/display-name": 0,
-        "react/jsx-uses-react": 2,
-        "react/jsx-uses-vars": 2,
-        "react/no-danger": 2,
-        "react/no-deprecated": 1,
-        "react/no-did-mount-set-state": 1,
-        "react/no-did-update-set-state": 1,
-        "react/no-direct-mutation-state": 2,
-        "react/no-is-mounted": 1,
-        "react/no-unknown-property": 1,
-        "react/react-in-jsx-scope": 2,
-        "eqeqeq": "warn", // require the use of === and !==
-        "prettier/prettier": 0,
-        "spaced-comment": 0,
     }
 }
