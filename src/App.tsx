@@ -1,31 +1,22 @@
-import { Box, Container, Typography } from '@mui/material'
-import { orange } from '@mui/material/colors'
-import styled from '@emotion/styled'
-
-import { MyButton } from './MyButton'
-
-const StyledDiv = styled.div`
-    padding: 32px;
-    background-color: ${orange.A400};
-    font-size: 24px;
-    border-radius: 4px;
-    color: black;
-    font-weight: bold;
-    &:hover {
-        color: white;
-    }
-`
+import { Container, Grid, Typography } from '@mui/material'
+import { BookmarksList } from './BookmarksList'
 
 export const App: React.FunctionComponent = () => {
     return (
-        <Container maxWidth="sm">
-            <Box sx={{ my: 4 }}>
-                <Typography variant="h4" component="h1" sx={{ mb: 2 }}>
-                    Tracking Reporter
-                </Typography>
-                <MyButton />
-                <StyledDiv>blubs</StyledDiv>
-            </Box>
+        <Container sx={{ my: 2 }} maxWidth="lg">
+            <Grid container spacing={2} justifyContent="center">
+                <Grid item xs={12}>
+                    <Typography component="h1" variant="h3" align="center">
+                        Bookmarks
+                    </Typography>
+                </Grid>
+                <Grid item xs={12}>
+                    {/*
+                     *<BookmarkAdd />
+                     */}
+                    <BookmarksList />
+                </Grid>
+            </Grid>
         </Container>
     )
 }
