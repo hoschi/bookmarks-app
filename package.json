@@ -1,38 +1,42 @@
 {
-  "name": "bookmarks-app",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "dev:server": "clear; json-graphql-server config/db.cjs --p 3009",
-    "build": "tsc && vite build",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "@apollo/client": "3.9.10",
-    "@emotion/react": "11.11.4",
-    "@emotion/styled": "11.11.5",
-    "@fontsource/roboto": "5.0.12",
-    "@mui/icons-material": "5.15.15",
-    "@mui/material": "5.15.15",
-    "date-fns": "3.6.0",
-    "graphql": "15.8.0",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
-  },
-  "devDependencies": {
-    "@types/react": "18.2.74",
-    "@types/react-dom": "18.2.24",
-    "@typescript-eslint/eslint-plugin": "7.5.0",
-    "@typescript-eslint/parser": "7.5.0",
-    "@vitejs/plugin-react-swc": "3.6.0",
-    "eslint-plugin-react-hooks": "4.6.0",
-    "eslint-plugin-react-refresh": "0.4.6",
-    "json-graphql-server": "2.3.2",
-    "prettier": "3.2.5",
-    "typescript": "5.4.4",
-    "vite": "5.2.8"
-  }
+    "name": "bookmarks-app",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "dev:server": "clear; json-graphql-server config/db.cjs --p 3009",
+        "build": "tsc && vite build",
+        "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+        "preview": "vite preview",
+        "gql-type-gen": "graphql-codegen"
+    },
+    "dependencies": {
+        "@apollo/client": "3.9.10",
+        "@emotion/react": "11.11.4",
+        "@emotion/styled": "11.11.5",
+        "@fontsource/roboto": "5.0.12",
+        "@graphql-codegen/cli": "5.0.2",
+        "@graphql-codegen/client-preset": "4.2.5",
+        "@graphql-typed-document-node/core": "3.2.0",
+        "@mui/icons-material": "5.15.15",
+        "@mui/material": "5.15.15",
+        "date-fns": "3.6.0",
+        "graphql": "15.8.0",
+        "react": "18.2.0",
+        "react-dom": "18.2.0"
+    },
+    "devDependencies": {
+        "@types/react": "18.2.74",
+        "@types/react-dom": "18.2.24",
+        "@typescript-eslint/eslint-plugin": "7.5.0",
+        "@typescript-eslint/parser": "7.5.0",
+        "@vitejs/plugin-react-swc": "3.6.0",
+        "eslint-plugin-react-hooks": "4.6.0",
+        "eslint-plugin-react-refresh": "0.4.6",
+        "json-graphql-server": "2.3.2",
+        "prettier": "3.2.5",
+        "typescript": "5.4.4",
+        "vite": "5.2.8"
+    }
 }
