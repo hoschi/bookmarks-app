@@ -3,7 +3,7 @@ import { BookmarksList } from './BookmarksList'
 
 export const App: React.FunctionComponent = () => {
     return (
-        <Container sx={{ my: 2 }} maxWidth="lg">
+        <Container sx={{ mt: 2, backgroundColor: 'grey.200', minHeight: '100vh' }} maxWidth="lg">
             <Grid container spacing={2} justifyContent="center">
                 <Grid item xs={12}>
                     <Typography component="h1" variant="h3" align="center">

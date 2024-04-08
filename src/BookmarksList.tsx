@@ -2,8 +2,9 @@ import * as React from 'react'
 import { Typography, List, Divider, Paper } from '@mui/material'
 import { queryAllBookmarks } from './gql'
 import { useQuery } from '@apollo/client'
+import { BookmarkItem } from './BookmarkItem'
 
-export const BookmarksList: React.FunctionComponent = () => {
+export const BookmarksList: React.FC = () => {
     const { loading, error, data } = useQuery(queryAllBookmarks)
     if (loading) return <p>Loading...</p>
     if (error) return <p>Query Error {error.toString()}</p>
@@ -14,18 +15,14 @@ export const BookmarksList: React.FunctionComponent = () => {
             <Typography component="div">
                 <List disablePadding>
                     {bookmarks.map((item, i: number) => {
-                        // FIXME why can this be null? I gues this is, because json-graphql-server returns [Bookmark] and not [Bookmark!]. See https://www.apollographql.com/blog/using-nullability-in-graphql#nullability-and-lists
+                        // why can this be null? I gues this is, because json-graphql-server returns [Bookmark] and not [Bookmark!]. See https://www.apollographql.com/blog/using-nullability-in-graphql#nullability-and-lists
                         if (!item) {
-                            return (
-                                <React.Fragment key={`null-${i}`}>
-                                    {i !== bookmarks.length - 1 && <Divider />}
-                                </React.Fragment>
-                            )
+                            throw new Error(`items from server shouldn't be null`)
                         }
 
                         return (
                             <React.Fragment key={item.id}>
-                                {item.title}
+                                <BookmarkItem bookmark={item} />
                                 {i !== bookmarks.length - 1 && <Divider />}
                             </React.Fragment>
                         )
