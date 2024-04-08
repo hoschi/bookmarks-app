@@ -1,0 +1,73 @@
+{
+  // These tasks will run in order when initializing your CodeSandbox project.
+  "setupTasks": [
+    {
+      "name": "Install Dependencies",
+      "command": "npm ci"
+    }
+  ],
+
+  // These tasks can be run from CodeSandbox. Running one will open a log in the app.
+  "tasks": {
+    "start": {
+      "name": "start",
+      "command": "npm run start",
+      "runAtStart": true
+    },
+    "start:server": {
+      "name": "start:server",
+      "command": "npm run start:server",
+      "runAtStart": false
+    },
+    "build": {
+      "name": "build",
+      "command": "npm run build",
+      "runAtStart": false
+    },
+    "test": {
+      "name": "test",
+      "command": "npm run test",
+      "runAtStart": false
+    },
+    "test:coverage": {
+      "name": "test:coverage",
+      "command": "npm run test:coverage",
+      "runAtStart": false
+    },
+    "check:prepush": {
+      "name": "check:prepush",
+      "command": "npm run check:prepush",
+      "runAtStart": false
+    },
+    "eject": {
+      "name": "eject",
+      "command": "npm run eject",
+      "runAtStart": false
+    },
+    "format": {
+      "name": "format",
+      "command": "npm run format",
+      "runAtStart": false
+    },
+    "lint:js:check": {
+      "name": "lint:js:check",
+      "command": "npm run lint:js:check",
+      "runAtStart": false
+    },
+    "lint:js:fix": {
+      "name": "lint:js:fix",
+      "command": "npm run lint:js:fix",
+      "runAtStart": false
+    },
+    "format-and-fix": {
+      "name": "format-and-fix",
+      "command": "npm run format-and-fix",
+      "runAtStart": false
+    },
+    "n": {
+      "name": "n",
+      "command": "npm run dev:server",
+      "runAtStart": true
+    }
+  }
+}
