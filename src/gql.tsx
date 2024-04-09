@@ -18,27 +18,27 @@ export const queryAllBookmarks = gql(/* GraphQL */ `
     }
 `)
 
-/*
- *export const createBookmark = gql`
- *    mutation CreateBookmark($id: ID!, $title: String!, $url: String!) {
- *        createBookmark(id: $id, isRead: false, title: $title, url: $url) {
- *            id
- *        }
- *    }
- *`
- *
- *export const changeBookmarkReadFlag = gql`
- *    mutation ChangeReadFlag($id: ID!, $isRead: Boolean!) {
- *        updateBookmark(id: $id, isRead: $isRead) {
- *            id
- *            isRead
- *        }
- *    }
- *`
- *
- *export const removeBookmark = gql`
- *    mutation RemoveBookmark($id: ID!) {
- *        removeBookmark(id: $id)
- *    }
- *`
- */
+//export const createBookmark = gql(/* GraphQL */ `
+    //mutation CreateBookmark($id: ID!, $title: String!, $url: String!) {
+        //createBookmark(id: $id, isRead: false, title: $title, url: $url) {
+            //id
+        //}
+    //}
+//`)
+
+export const changeBookmarkReadFlag = gql(/* GraphQL */ `
+    mutation ChangeReadFlag($id: ID!, $isRead: Boolean!) {
+        updateBookmark(id: $id, isRead: $isRead) {
+            id
+            isRead
+        }
+    }
+`)
+
+export const removeBookmark = gql(/* GraphQL */ `
+    mutation RemoveBookmark($id: ID!) {
+        removeBookmark(id: $id) {
+            id
+        }
+    }
+`)
