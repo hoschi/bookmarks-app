@@ -7,7 +7,8 @@
         "dev": "vite",
         "dev:server": "clear; json-graphql-server config/db.cjs --p 3009",
         "build": "tsc && vite build",
-        "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+        "format": "prettier -w src",
+        "lint": "npx tsc --noEmit --pretty; eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
         "preview": "vite preview",
         "gql-type-gen": "graphql-codegen"
     },
@@ -22,11 +23,16 @@
         "@mui/icons-material": "5.15.15",
         "@mui/material": "5.15.15",
         "date-fns": "3.6.0",
+        "formik": "2.4.5",
         "graphql": "15.8.0",
+        "ramda": "0.29.1",
         "react": "18.2.0",
-        "react-dom": "18.2.0"
+        "react-dom": "18.2.0",
+        "react-hook-form": "7.51.2",
+        "react-hook-form-mui": "7.0.0-beta.4"
     },
     "devDependencies": {
+        "@types/ramda": "0.29.12",
         "@types/react": "18.2.74",
         "@types/react-dom": "18.2.24",
         "@typescript-eslint/eslint-plugin": "7.5.0",

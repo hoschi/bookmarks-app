@@ -1,5 +1,6 @@
 import { Container, Grid, Typography } from '@mui/material'
 import { BookmarksList } from './BookmarksList'
+import { BookmarkAddForm } from './BookmarkAddForm'
 
 export const App: React.FunctionComponent = () => {
     return (
@@ -11,9 +12,7 @@ export const App: React.FunctionComponent = () => {
                     </Typography>
                 </Grid>
                 <Grid item xs={12}>
-                    {/*
-                     *<BookmarkAdd />
-                     */}
+                    <BookmarkAddForm />
                     <BookmarksList />
                 </Grid>
             </Grid>

@@ -18,13 +18,13 @@ export const queryAllBookmarks = gql(/* GraphQL */ `
     }
 `)
 
-//export const createBookmark = gql(/* GraphQL */ `
-    //mutation CreateBookmark($id: ID!, $title: String!, $url: String!) {
-        //createBookmark(id: $id, isRead: false, title: $title, url: $url) {
-            //id
-        //}
-    //}
-//`)
+export const createBookmark = gql(/* GraphQL */ `
+    mutation CreateBookmark($title: String!, $url: String!) {
+        createBookmark(isRead: false, title: $title, url: $url) {
+            id
+        }
+    }
+`)
 
 export const changeBookmarkReadFlag = gql(/* GraphQL */ `
     mutation ChangeReadFlag($id: ID!, $isRead: Boolean!) {
