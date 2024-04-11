@@ -1,30 +1,39 @@
-# React + TypeScript + Vite
+# Bookmarks App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[TodoMVC](http://todomvc.com/) like app to try out technologies. In this version I tried [Apollo Client](https://www.apollographql.com/client/) in the frontend and a [json-graphql-server](https://github.com/marmelab/json-graphql-server) as backend mock.
 
-Currently, two official plugins are available:
+## Usage
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-   add a bookmark and insert a title as description
+-   mark bookmark as un-/read with the checkbox on left hand side
+-   delete a bookmark by hovering over the item and then clicking on the trash icon on the right hand side
+-   go to the url of the bookmark by clicking on the item itself
 
-## Expanding the ESLint configuration
+## Nothworthy code features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+-   vite as modern version of Create React App
+-   optimistic UI for "mark as read/unread"
+    -   updates UI before server responded
+    -   this approach shows easily that it should be used with care: the list doesn't reorder itself! This is because the sort logic is only in the backend/server, not in frontend.
 
-- Configure the top-level `parserOptions` property like this:
+## Run it on your own
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+-   clone repo
+-   `npm ci`
+-   open two terminals and run
+    -   `npm run dev` starts frontend server
+    -   `npm run dev:server` starts fake backend
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Screenshots
+
+### Normal view
+
+![normal view](./images/normal.png)
+
+### Hover over item
+
+![hover over item](./images/hover.png)
+
+### Add form
+
+![add form](./images/add.png)
