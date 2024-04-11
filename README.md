@@ -2,6 +2,11 @@
 
 [TodoMVC](http://todomvc.com/) like app to try out technologies. In this version I tried [Apollo Client](https://www.apollographql.com/client/) in the frontend and a [json-graphql-server](https://github.com/marmelab/json-graphql-server) as backend mock.
 
+## Versions
+
+-   [Create React App / Apollo / graphql.macro](https://github.com/hoschi/bookmarks-app/tree/version/cra-2022)
+-   [Vite / TypeScript / Apollo (current)](https://github.com/hoschi/bookmarks-app/tree/version/vite-ts-2024)
+
 ## Usage
 
 -   add a bookmark and insert a title as description
